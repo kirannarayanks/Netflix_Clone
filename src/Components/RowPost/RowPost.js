@@ -23,6 +23,7 @@ function RowPost(props) {
       };
 
       const handleMovie =(id)=>{
+        
         console.log(id)
         axios.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`).then((res)=>{
             console.log(res.data)
@@ -37,12 +38,12 @@ function RowPost(props) {
         <h2>{props.title}</h2>
         <div className="posters">
             {movies.map((obj)=>
-                <img onClick={()=>handleMovie(obj.id)} className={props.isSmall?'smallPoster':'poster'} src={props.isSmall?`${imageUrl+obj.poster_path}`:`${imageUrl+obj.backdrop_path}`} alt="" />
+                <img onClick={props.isSmall?()=>handleMovie(obj.id):null} className={props.isSmall?'smallPoster':'poster'} src={props.isSmall?`${imageUrl+obj.poster_path}`:`${imageUrl+obj.backdrop_path}`} alt="" />
 )}
             
            
         </div>
-    {urlId && <Youtube opts={opts} videoId={urlId.key}/>}
+    {props.isSmall?urlId && <Youtube opts={opts} videoId={urlId.key}/>:""}
     </div>
   )
 }
