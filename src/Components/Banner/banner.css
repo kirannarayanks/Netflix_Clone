@@ -1,8 +1,7 @@
 .banner{
-    background:url('https://wallpaperaccess.com/full/2855615.jpg');
     background-size:cover;
     background-repeat: no-repeat;
-    height:448px;
+    height:450px;
     color:aliceblue;
 }
 .content{
@@ -46,6 +45,6 @@
 
 }
 .fade_bottom{
-    height: 7.4rem;
+    height: 7.5rem;
     background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111);
 }
